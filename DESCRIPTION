@@ -1,0 +1,12 @@
+Package: iotc.data.reference.datasets.CE
+Type: Package
+Title: All official IOTC CE datasets
+Version: 2023.07.12
+Author: IOTC Secretariat (data section)
+Maintainer: IOTC Secretariat (data section) <IOTC-Statistics@fao.org>
+Description: The current content of all IOTC CE datasets (effort, raw catches) in a format suitable for usage within the IOTC R libraries
+License: TBD
+Encoding: UTF-8
+LazyData: true
+Depends: 
+    R (>= 2.10)
