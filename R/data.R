@@ -72,7 +72,7 @@
 #' }
 "CA_RAW"
 
-#' The 'raw' monthly catch dataset
+#' The 'raw' monthly catch and effort dataset
 #'
 #' @format
 #' \describe{
