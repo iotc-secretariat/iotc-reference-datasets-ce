@@ -1,3 +1,6 @@
+#' The date at which the C-E datasets were last updated
+"LAST_UPDATE"
+
 #' The 'raw' monthly effort dataset
 #'
 #' @format
@@ -22,7 +25,7 @@
 #'   \item{EFFORT}{}
 #'   \item{EFFORT_UNIT_CODE}{}
 #' }
-"EF_RAW"
+"RAW.EF"
 
 #' The 'raw' monthly catch dataset
 #'
@@ -70,7 +73,7 @@
 #'   \item{RAISING}{}
 #'   \item{RAISE_CODE}{}
 #' }
-"CA_RAW"
+"RAW.CA"
 
 #' The 'raw' monthly catch and effort dataset
 #'
@@ -121,4 +124,4 @@
 #'   \item{RAISING}{}
 #'   \item{RAISE_CODE}{}
 #' }
-"CE_RAW"
+"RAW.CE"

@@ -1,10 +1,14 @@
 library(iotc.base.common.data)
+library(lubridate)
 
-EF_RAW = EF.raw(factorize_results = FALSE)
-usethis::use_data(EF_RAW, overwrite = TRUE)
+LAST_UPDATE = today(tzone = "UTC")
+usethis::use_data(LAST_UPDATE, overwrite = TRUE)
 
-CA_RAW = CA.raw(factorize_results = FALSE)
-usethis::use_data(CA_RAW, overwrite = TRUE)
+RAW.EF = EF.raw(factorize_results = FALSE)
+usethis::use_data(RAW.EF, overwrite = TRUE)
 
-CE_RAW = CE.raw(factorize_results = FALSE)
-usethis::use_data(CE_RAW, overwrite = TRUE)
+RAW.CA = CA.raw(factorize_results = FALSE)
+usethis::use_data(RAW.CA, overwrite = TRUE)
+
+RAW.CE = CE.raw(factorize_results = FALSE)
+usethis::use_data(RAW.CE, overwrite = TRUE)
