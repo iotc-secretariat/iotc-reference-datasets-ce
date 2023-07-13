@@ -52,7 +52,7 @@
 #'   \item{IUCN_STATUS}{}
 #'   \item{SPECIES_WP_CODE}{}
 #'   \item{SPECIES_WP}{}
-#'   \item{SPECIES_GROUP_CODE{}
+#'   \item{SPECIES_GROUP_CODE}{}
 #'   \item{SPECIES_GROUP}{}
 #'   \item{SPECIES_CATEGORY_CODE}{}
 #'   \item{SPECIES_CATEGORY}{}
@@ -103,7 +103,7 @@
 #'   \item{IUCN_STATUS}{}
 #'   \item{SPECIES_WP_CODE}{}
 #'   \item{SPECIES_WP}{}
-#'   \item{SPECIES_GROUP_CODE{}
+#'   \item{SPECIES_GROUP_CODE}{}
 #'   \item{SPECIES_GROUP}{}
 #'   \item{SPECIES_CATEGORY_CODE}{}
 #'   \item{SPECIES_CATEGORY}{}
