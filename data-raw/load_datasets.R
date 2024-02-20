@@ -1,7 +1,7 @@
+library(httr)
 library(iotc.base.common.data)
-library(lubridate)
 
-LAST_UPDATE = today(tzone = "UTC")
+LAST_UPDATE = Sys.Date()
 usethis::use_data(LAST_UPDATE, overwrite = TRUE)
 
 RAW.EF = EF.raw(factorize_results = FALSE)
@@ -12,6 +12,9 @@ usethis::use_data(RAW.CA, overwrite = TRUE)
 
 RAW.CE = CE.raw(factorize_results = FALSE)
 usethis::use_data(RAW.CE, overwrite = TRUE)
+
+RSD.CA = CA.raised(factorize_results = FALSE)
+usethis::use_data(RSD.CA, overwrite = TRUE)
 
 BITBUCKET_REPO_URL = paste0("https://api.bitbucket.org/2.0/repositories/iotc-ws/iotc-reference-datasets-ce/downloads")
 

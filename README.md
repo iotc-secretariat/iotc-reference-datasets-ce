@@ -13,7 +13,8 @@ Simply run the `load_datasets.R` script included under the `data-raw` folder.
 The script will take care of:
 
 -   loading all current _raw_ effort data (`IOTDB`.`dbo`.`V_LEGACY_EF`), _raw_ catch and effort data (`IOTDB`.`dbo`.`V_LEGACY_CE`), and _raw_ catch data (`IOTDB`.`dbo`.`V_LEGACY_CA`) using the IOTC data libraries 
--   producing the `.rda` R data file corresponding to each of the three retained catch datasets above, eventually storing it under the `data` folder of the project
+-   loading the _raised_ catch data in weight and number (`WP_CE_raised`.`dbo`.`CA_RAISED`]) for the five major IOTC species, i.e., _albacore tuna_, _bigeye tuna_, _skipjack tuna_, _swordfish_, and _yellowfin tuna_
+-   producing the `.rda` R data files corresponding to each of the four retained catch datasets above, eventually storing them under the `data` folder of the project
 -   uploading the `.rda` files onto the [*Downloads* section](https://bitbucket.org/iotc-ws/iotc-reference-datasets-nc/downloads/) of the BitBucket repository
 
 ## How to build the package
@@ -52,11 +53,12 @@ or select `Build` / `Install package` from within R studio
 1.  `RAW.EF` - *raw* georeferenced effort data
 2.  `RAW.CE` - *raw* georeferenced catch and effort data
 3.  `RAW.CA` - *raw* georeferenced catch data
-4.  `LAST_UPDATE` - the date of last update / production of the datasets
+4.  `RSD.CA` - *raised* georeferenced catch data for the five major IOTC species
+5.  `LAST_UPDATE` - the date of last update / production of the datasets
 
 ## Structure of the datasets
 
-### `EF`
+### `RAW.EF`
 
 -   `YEAR` < *to be described* >
 -   `QUARTER` < *to be described* >
@@ -78,7 +80,7 @@ or select `Build` / `Install package` from within R studio
 -   `EFFORT` < *to be described* >
 -   `EFFORT_UNIT_CODE` < *to be described* >
 
-### `CE`
+### `RAW.CE`
 
 -   `YEAR` < *to be described* >
 -   `QUARTER` < *to be described* >
@@ -125,7 +127,7 @@ or select `Build` / `Install package` from within R studio
 -   `RAISING` < *to be described* >
 -   `RAISE_CODE` < *to be described* >
 
-### `CA`
+### `RAW.CA`
 
 -   `YEAR` < *to be described* >
 -   `QUARTER` < *to be described* >
@@ -169,3 +171,41 @@ or select `Build` / `Install package` from within R studio
 -   `RAISING` < *to be described* >
 -   `RAISE_CODE` < *to be described* >
  
+### `RSD.CA`
+
+-   `YEAR` < *to be described* >
+-   `QUARTER` < *to be described* >
+-   `MONTH_START` < *to be described* >
+-   `MONTH_END` < *to be described* >
+-   `FISHING_GROUND_CODE` < *to be described* >
+-   `FISHING_GROUND` < *to be described* >
+-   `FLEET_CODE` < *to be described* >
+-   `FLEET` < *to be described* >
+-   `FISHERY_TYPE_CODE` < *to be described* >
+-   `FISHERY_TYPE` < *to be described* >
+-   `FISHERY_GROUP_CODE` < *to be described* >
+-   `FISHERY_GROUP` < *to be described* >
+-   `FISHERY_CODE` < *to be described* >
+-   `FISHERY` < *to be described* >
+-   `GEAR_CODE` < *to be described* >
+-   `GEAR` < *to be described* >
+-   `CATCH_SCHOOL_TYPE_CODE` < *to be described* >
+-   `IUCN_STATUS_CODE` < *to be described* >
+-   `IUCN_STATUS` < *to be described* >
+-   `SPECIES_WP_CODE` < *to be described* >
+-   `SPECIES_WP` < *to be described* >
+-   `SPECIES_GROUP_CODE` < *to be described* >
+-   `SPECIES_GROUP` < *to be described* >
+-   `SPECIES_CATEGORY_CODE` < *to be described* >
+-   `SPECIES_CATEGORY` < *to be described* >
+-   `SPECIES_CODE` < *to be described* >
+-   `SPECIES` < *to be described* >
+-   `SPECIES_SCIENTIFIC` < *to be described* >
+-   `SPECIES_FAMILY` < *to be described* >
+-   `SPECIES_ORDER` < *to be described* >
+-   `IS_IOTC_SPECIES` < *to be described* >
+-   `IS_SPECIES_AGGREGATE` < *to be described* >
+-   `IS_SSI` < *to be described* >
+-   `CATCH` < *to be described* >
+-   `CATCH_UNIT_CODE` < *to be described* >
+-   `CATCH_IN_NUMBERS` < *to be described* >
