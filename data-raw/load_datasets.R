@@ -15,8 +15,6 @@ usethis::use_data(RSD.CA, overwrite = TRUE, compress = "gzip")
 
 LAST_UPDATE = Sys.Date()
 
-LAST_UPDATE = Sys.Date()
-
 METADATA = list(
   RAW.EF = list(
     DATA = nrow(RAW.EF),
