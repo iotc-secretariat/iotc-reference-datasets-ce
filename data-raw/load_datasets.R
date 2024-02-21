@@ -35,18 +35,30 @@ METADATA = list(
 )
 usethis::use_data(METADATA, overwrite = TRUE, compress = "gzip")
 
-BITBUCKET_REPO_URL = "https://api.bitbucket.org/2.0/repositories/iotc-ws/iotc-reference-datasets-ce/downloads"
+TOKEN = Sys.getenv("BITBUCKET_UPLOAD_CE_DATASET_TOKEN")
 
-for(file in list.files("../data", pattern = "*.rda")) {
-  log_info(paste0("Uploading '", file, "' to BitBucket repository under ", BITBUCKET_REPO_URL))
+if(TOKEN == "") {
+  stop("No 'BITBUCKET_UPLOAD_CE_DATASET_TOKEN' value found in system environment: cannot upload artifacts!")
+} else {
+  BITBUCKET_REPO_URL = "https://api.bitbucket.org/2.0/repositories/iotc-ws/iotc-reference-datasets-ce/downloads"
 
-  upload_response =
-    POST(BITBUCKET_REPO_URL,
-         body = list(files = upload_file(paste0("../data/", file))),
-         add_headers(
-           Authorization = paste0("Bearer ", Sys.getenv("BITBUCKET_UPLOAD_CE_DATASET_TOKEN"))
-         )
-    )
+  FILES = list.files("../data", pattern = "*.rda")
 
-  log_info(paste0("Upload response: ", upload_response))
+  if(length(FILES) == 0) {
+    stop("No .RDA files found: check that these have been produced and that you are running this script from the right directory (its container folder)")
+  }
+
+  for(file in FILES) {
+    log_info(paste0("Uploading '", file, "' to BitBucket repository under ", BITBUCKET_REPO_URL))
+
+    upload_response =
+      POST(BITBUCKET_REPO_URL,
+           body = list(files = upload_file(paste0("../data/", file))),
+           add_headers(
+             Authorization = paste0("Bearer ", TOKEN)
+           )
+      )
+
+    log_info(paste0("Upload response: [", status_code(upload_response), "] / ", content(upload_response)))
+  }
 }
