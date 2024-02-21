@@ -12,23 +12,19 @@ Simply run the `load_datasets.R` script included under the `data-raw` folder.
 
 The script will take care of:
 
--   loading all current _raw_ effort data (`IOTDB`.`dbo`.`V_LEGACY_EF`), _raw_ catch and effort data (`IOTDB`.`dbo`.`V_LEGACY_CE`), and _raw_ catch data (`IOTDB`.`dbo`.`V_LEGACY_CA`) using the IOTC data libraries 
--   loading the _raised_ catch data in weight and number (`WP_CE_raised`.`dbo`.`CA_RAISED`]) for the five major IOTC species, i.e., _albacore tuna_, _bigeye tuna_, _skipjack tuna_, _swordfish_, and _yellowfin tuna_
+-   loading all current *raw* effort data (`IOTDB`.`dbo`.`V_LEGACY_EF`), *raw* catch and effort data (`IOTDB`.`dbo`.`V_LEGACY_CE`), and *raw* catch data (`IOTDB`.`dbo`.`V_LEGACY_CA`) using the IOTC data libraries
+-   loading the *raised* catch data in weight and number (`WP_CE_raised`.`dbo`.`CA_RAISED`]) for the five major IOTC species, i.e., *albacore tuna*, *bigeye tuna*, *skipjack tuna*, *swordfish*, and *yellowfin tuna*
 -   producing the `.rda` R data files corresponding to each of the four retained catch datasets above, eventually storing them under the `data` folder of the project
--   uploading the `.rda` files onto the [*Downloads* section](https://bitbucket.org/iotc-ws/iotc-reference-datasets-nc/downloads/) of the BitBucket repository
 
 ## How to build the package
 
-From within a R session run:
+Run the `build_and_upload.R` script.
 
-```         
-devtools::document(roclets = c('rd', 'collate', 'namespace'))
-devtools::build()
-```
+This will:
 
-or select `Build` / `Build source package` from within R studio
-
-At the end of the installation, the script uploads the artifacts (i.e., the R data files) onto the [Download](https://bitbucket.org/iotc-ws/iotc-reference-datasets-ce/downloads/) section of the BitBucket repository.
+-   load all necessary datasets (see above)
+-   build the package
+-   upload the `.rda` dataset files and the built package (as a `.tar.gz` file) onto the [*Downloads* section](https://bitbucket.org/iotc-ws/iotc-reference-datasets-ce/downloads/) of the BitBucket repository
 
 For this to work, it is necessary to configure in advance the `BITBUCKET_UPLOAD_CE_DATASET_TOKEN` as an environment variable that should be assigned an access token created for the specific repository (with the `repository:write` OAuth 2.0 scope).
 
@@ -60,152 +56,152 @@ or select `Build` / `Install package` from within R studio
 
 ### `RAW.EF`
 
--   `YEAR` < *to be described* >
--   `QUARTER` < *to be described* >
--   `MONTH_START` < *to be described* >
--   `MONTH_END` < *to be described* >
--   `FISHING_GROUND_CODE` < *to be described* >
--   `FISHING_GROUND` < *to be described* >
--   `FLEET_CODE` < *to be described* >
--   `FLEET` < *to be described* >
--   `FISHERY_TYPE_CODE` < *to be described* >
--   `FISHERY_TYPE` < *to be described* >
--   `FISHERY_GROUP_CODE` < *to be described* >
--   `FISHERY_GROUP` < *to be described* >
--   `FISHERY_CODE` < *to be described* >
--   `FISHERY` < *to be described* >
--   `GEAR_CODE` < *to be described* >
--   `GEAR`  < *to be described* >
--   `SCHOOL_TYPE_CODE` < *to be described* >
--   `EFFORT` < *to be described* >
--   `EFFORT_UNIT_CODE` < *to be described* >
+-   `YEAR` \< *to be described* \>
+-   `QUARTER` \< *to be described* \>
+-   `MONTH_START` \< *to be described* \>
+-   `MONTH_END` \< *to be described* \>
+-   `FISHING_GROUND_CODE` \< *to be described* \>
+-   `FISHING_GROUND` \< *to be described* \>
+-   `FLEET_CODE` \< *to be described* \>
+-   `FLEET` \< *to be described* \>
+-   `FISHERY_TYPE_CODE` \< *to be described* \>
+-   `FISHERY_TYPE` \< *to be described* \>
+-   `FISHERY_GROUP_CODE` \< *to be described* \>
+-   `FISHERY_GROUP` \< *to be described* \>
+-   `FISHERY_CODE` \< *to be described* \>
+-   `FISHERY` \< *to be described* \>
+-   `GEAR_CODE` \< *to be described* \>
+-   `GEAR` \< *to be described* \>
+-   `SCHOOL_TYPE_CODE` \< *to be described* \>
+-   `EFFORT` \< *to be described* \>
+-   `EFFORT_UNIT_CODE` \< *to be described* \>
 
 ### `RAW.CE`
 
--   `YEAR` < *to be described* >
--   `QUARTER` < *to be described* >
--   `MONTH_START` < *to be described* >
--   `MONTH_END` < *to be described* >
--   `FISHING_GROUND_CODE` < *to be described* >
--   `FISHING_GROUND` < *to be described* >
--   `FLEET_CODE` < *to be described* >
--   `FLEET` < *to be described* >
--   `FISHERY_TYPE_CODE` < *to be described* >
--   `FISHERY_TYPE` < *to be described* >
--   `FISHERY_GROUP_CODE` < *to be described* >
--   `FISHERY_GROUP` < *to be described* >
--   `FISHERY_CODE` < *to be described* >
--   `FISHERY` < *to be described* >
--   `GEAR_CODE` < *to be described* >
--   `GEAR` < *to be described* >
--   `EFFORT_SCHOOL_TYPE_CODE` < *to be described* >
--   `CATCH_SCHOOL_TYPE_CODE` < *to be described* >
--   `EFFORT` < *to be described* >
--   `EFFORT_UNIT_CODE` < *to be described* >
--   `IUCN_STATUS_CODE` < *to be described* >
--   `IUCN_STATUS` < *to be described* >
--   `SPECIES_WP_CODE` < *to be described* >
--   `SPECIES_WP` < *to be described* >
--   `SPECIES_GROUP_CODE` < *to be described* >
--   `SPECIES_GROUP` < *to be described* >
--   `SPECIES_CATEGORY_CODE` < *to be described* >
--   `SPECIES_CATEGORY` < *to be described* >
--   `SPECIES_CODE` < *to be described* >
--   `SPECIES` < *to be described* >
--   `SPECIES_SCIENTIFIC` < *to be described* >
--   `SPECIES_FAMILY` < *to be described* >
--   `SPECIES_ORDER` < *to be described* >
--   `IS_IOTC_SPECIES` < *to be described* >
--   `IS_SPECIES_AGGREGATE` < *to be described* >
--   `IS_SSI` < *to be described* >
--   `CATCH` < *to be described* >
--   `CATCH_UNIT_CODE` < *to be described* >
--   `FATE_TYPE_CODE` < *to be described* >
--   `FATE_TYPE` < *to be described* >
--   `FATE_CODE` < *to be described* >
--   `FATE` < *to be described* >
--   `RAISING` < *to be described* >
--   `RAISE_CODE` < *to be described* >
+-   `YEAR` \< *to be described* \>
+-   `QUARTER` \< *to be described* \>
+-   `MONTH_START` \< *to be described* \>
+-   `MONTH_END` \< *to be described* \>
+-   `FISHING_GROUND_CODE` \< *to be described* \>
+-   `FISHING_GROUND` \< *to be described* \>
+-   `FLEET_CODE` \< *to be described* \>
+-   `FLEET` \< *to be described* \>
+-   `FISHERY_TYPE_CODE` \< *to be described* \>
+-   `FISHERY_TYPE` \< *to be described* \>
+-   `FISHERY_GROUP_CODE` \< *to be described* \>
+-   `FISHERY_GROUP` \< *to be described* \>
+-   `FISHERY_CODE` \< *to be described* \>
+-   `FISHERY` \< *to be described* \>
+-   `GEAR_CODE` \< *to be described* \>
+-   `GEAR` \< *to be described* \>
+-   `EFFORT_SCHOOL_TYPE_CODE` \< *to be described* \>
+-   `CATCH_SCHOOL_TYPE_CODE` \< *to be described* \>
+-   `EFFORT` \< *to be described* \>
+-   `EFFORT_UNIT_CODE` \< *to be described* \>
+-   `IUCN_STATUS_CODE` \< *to be described* \>
+-   `IUCN_STATUS` \< *to be described* \>
+-   `SPECIES_WP_CODE` \< *to be described* \>
+-   `SPECIES_WP` \< *to be described* \>
+-   `SPECIES_GROUP_CODE` \< *to be described* \>
+-   `SPECIES_GROUP` \< *to be described* \>
+-   `SPECIES_CATEGORY_CODE` \< *to be described* \>
+-   `SPECIES_CATEGORY` \< *to be described* \>
+-   `SPECIES_CODE` \< *to be described* \>
+-   `SPECIES` \< *to be described* \>
+-   `SPECIES_SCIENTIFIC` \< *to be described* \>
+-   `SPECIES_FAMILY` \< *to be described* \>
+-   `SPECIES_ORDER` \< *to be described* \>
+-   `IS_IOTC_SPECIES` \< *to be described* \>
+-   `IS_SPECIES_AGGREGATE` \< *to be described* \>
+-   `IS_SSI` \< *to be described* \>
+-   `CATCH` \< *to be described* \>
+-   `CATCH_UNIT_CODE` \< *to be described* \>
+-   `FATE_TYPE_CODE` \< *to be described* \>
+-   `FATE_TYPE` \< *to be described* \>
+-   `FATE_CODE` \< *to be described* \>
+-   `FATE` \< *to be described* \>
+-   `RAISING` \< *to be described* \>
+-   `RAISE_CODE` \< *to be described* \>
 
 ### `RAW.CA`
 
--   `YEAR` < *to be described* >
--   `QUARTER` < *to be described* >
--   `MONTH_START` < *to be described* >
--   `MONTH_END` < *to be described* >
--   `FISHING_GROUND_CODE` < *to be described* >
--   `FISHING_GROUND` < *to be described* >
--   `FLEET_CODE` < *to be described* >
--   `FLEET` < *to be described* >
--   `FISHERY_TYPE_CODE` < *to be described* >
--   `FISHERY_TYPE` < *to be described* >
--   `FISHERY_GROUP_CODE` < *to be described* >
--   `FISHERY_GROUP` < *to be described* >
--   `FISHERY_CODE` < *to be described* >
--   `FISHERY` < *to be described* >
--   `GEAR_CODE` < *to be described* >
--   `GEAR` < *to be described* >
--   `CATCH_SCHOOL_TYPE_CODE` < *to be described* >
--   `IUCN_STATUS_CODE` < *to be described* >
--   `IUCN_STATUS` < *to be described* >
--   `SPECIES_WP_CODE` < *to be described* >
--   `SPECIES_WP` < *to be described* >
--   `SPECIES_GROUP_CODE` < *to be described* >
--   `SPECIES_GROUP` < *to be described* >
--   `SPECIES_CATEGORY_CODE` < *to be described* >
--   `SPECIES_CATEGORY` < *to be described* >
--   `SPECIES_CODE` < *to be described* >
--   `SPECIES` < *to be described* >
--   `SPECIES_SCIENTIFIC` < *to be described* >
--   `SPECIES_FAMILY` < *to be described* >
--   `SPECIES_ORDER` < *to be described* >
--   `IS_IOTC_SPECIES` < *to be described* >
--   `IS_SPECIES_AGGREGATE` < *to be described* >
--   `IS_SSI` < *to be described* >
--   `CATCH` < *to be described* >
--   `CATCH_UNIT_CODE` < *to be described* >
--   `FATE_TYPE_CODE` < *to be described* >
--   `FATE_TYPE` < *to be described* >
--   `FATE_CODE` < *to be described* >
--   `FATE` < *to be described* >
--   `RAISING` < *to be described* >
--   `RAISE_CODE` < *to be described* >
- 
+-   `YEAR` \< *to be described* \>
+-   `QUARTER` \< *to be described* \>
+-   `MONTH_START` \< *to be described* \>
+-   `MONTH_END` \< *to be described* \>
+-   `FISHING_GROUND_CODE` \< *to be described* \>
+-   `FISHING_GROUND` \< *to be described* \>
+-   `FLEET_CODE` \< *to be described* \>
+-   `FLEET` \< *to be described* \>
+-   `FISHERY_TYPE_CODE` \< *to be described* \>
+-   `FISHERY_TYPE` \< *to be described* \>
+-   `FISHERY_GROUP_CODE` \< *to be described* \>
+-   `FISHERY_GROUP` \< *to be described* \>
+-   `FISHERY_CODE` \< *to be described* \>
+-   `FISHERY` \< *to be described* \>
+-   `GEAR_CODE` \< *to be described* \>
+-   `GEAR` \< *to be described* \>
+-   `CATCH_SCHOOL_TYPE_CODE` \< *to be described* \>
+-   `IUCN_STATUS_CODE` \< *to be described* \>
+-   `IUCN_STATUS` \< *to be described* \>
+-   `SPECIES_WP_CODE` \< *to be described* \>
+-   `SPECIES_WP` \< *to be described* \>
+-   `SPECIES_GROUP_CODE` \< *to be described* \>
+-   `SPECIES_GROUP` \< *to be described* \>
+-   `SPECIES_CATEGORY_CODE` \< *to be described* \>
+-   `SPECIES_CATEGORY` \< *to be described* \>
+-   `SPECIES_CODE` \< *to be described* \>
+-   `SPECIES` \< *to be described* \>
+-   `SPECIES_SCIENTIFIC` \< *to be described* \>
+-   `SPECIES_FAMILY` \< *to be described* \>
+-   `SPECIES_ORDER` \< *to be described* \>
+-   `IS_IOTC_SPECIES` \< *to be described* \>
+-   `IS_SPECIES_AGGREGATE` \< *to be described* \>
+-   `IS_SSI` \< *to be described* \>
+-   `CATCH` \< *to be described* \>
+-   `CATCH_UNIT_CODE` \< *to be described* \>
+-   `FATE_TYPE_CODE` \< *to be described* \>
+-   `FATE_TYPE` \< *to be described* \>
+-   `FATE_CODE` \< *to be described* \>
+-   `FATE` \< *to be described* \>
+-   `RAISING` \< *to be described* \>
+-   `RAISE_CODE` \< *to be described* \>
+
 ### `RSD.CA`
 
--   `YEAR` < *to be described* >
--   `QUARTER` < *to be described* >
--   `MONTH_START` < *to be described* >
--   `MONTH_END` < *to be described* >
--   `FISHING_GROUND_CODE` < *to be described* >
--   `FISHING_GROUND` < *to be described* >
--   `FLEET_CODE` < *to be described* >
--   `FLEET` < *to be described* >
--   `FISHERY_TYPE_CODE` < *to be described* >
--   `FISHERY_TYPE` < *to be described* >
--   `FISHERY_GROUP_CODE` < *to be described* >
--   `FISHERY_GROUP` < *to be described* >
--   `FISHERY_CODE` < *to be described* >
--   `FISHERY` < *to be described* >
--   `GEAR_CODE` < *to be described* >
--   `GEAR` < *to be described* >
--   `CATCH_SCHOOL_TYPE_CODE` < *to be described* >
--   `IUCN_STATUS_CODE` < *to be described* >
--   `IUCN_STATUS` < *to be described* >
--   `SPECIES_WP_CODE` < *to be described* >
--   `SPECIES_WP` < *to be described* >
--   `SPECIES_GROUP_CODE` < *to be described* >
--   `SPECIES_GROUP` < *to be described* >
--   `SPECIES_CATEGORY_CODE` < *to be described* >
--   `SPECIES_CATEGORY` < *to be described* >
--   `SPECIES_CODE` < *to be described* >
--   `SPECIES` < *to be described* >
--   `SPECIES_SCIENTIFIC` < *to be described* >
--   `SPECIES_FAMILY` < *to be described* >
--   `SPECIES_ORDER` < *to be described* >
--   `IS_IOTC_SPECIES` < *to be described* >
--   `IS_SPECIES_AGGREGATE` < *to be described* >
--   `IS_SSI` < *to be described* >
--   `CATCH` < *to be described* >
--   `CATCH_UNIT_CODE` < *to be described* >
--   `CATCH_IN_NUMBERS` < *to be described* >
+-   `YEAR` \< *to be described* \>
+-   `QUARTER` \< *to be described* \>
+-   `MONTH_START` \< *to be described* \>
+-   `MONTH_END` \< *to be described* \>
+-   `FISHING_GROUND_CODE` \< *to be described* \>
+-   `FISHING_GROUND` \< *to be described* \>
+-   `FLEET_CODE` \< *to be described* \>
+-   `FLEET` \< *to be described* \>
+-   `FISHERY_TYPE_CODE` \< *to be described* \>
+-   `FISHERY_TYPE` \< *to be described* \>
+-   `FISHERY_GROUP_CODE` \< *to be described* \>
+-   `FISHERY_GROUP` \< *to be described* \>
+-   `FISHERY_CODE` \< *to be described* \>
+-   `FISHERY` \< *to be described* \>
+-   `GEAR_CODE` \< *to be described* \>
+-   `GEAR` \< *to be described* \>
+-   `CATCH_SCHOOL_TYPE_CODE` \< *to be described* \>
+-   `IUCN_STATUS_CODE` \< *to be described* \>
+-   `IUCN_STATUS` \< *to be described* \>
+-   `SPECIES_WP_CODE` \< *to be described* \>
+-   `SPECIES_WP` \< *to be described* \>
+-   `SPECIES_GROUP_CODE` \< *to be described* \>
+-   `SPECIES_GROUP` \< *to be described* \>
+-   `SPECIES_CATEGORY_CODE` \< *to be described* \>
+-   `SPECIES_CATEGORY` \< *to be described* \>
+-   `SPECIES_CODE` \< *to be described* \>
+-   `SPECIES` \< *to be described* \>
+-   `SPECIES_SCIENTIFIC` \< *to be described* \>
+-   `SPECIES_FAMILY` \< *to be described* \>
+-   `SPECIES_ORDER` \< *to be described* \>
+-   `IS_IOTC_SPECIES` \< *to be described* \>
+-   `IS_SPECIES_AGGREGATE` \< *to be described* \>
+-   `IS_SSI` \< *to be described* \>
+-   `CATCH` \< *to be described* \>
+-   `CATCH_UNIT_CODE` \< *to be described* \>
+-   `CATCH_IN_NUMBERS` \< *to be described* \>
