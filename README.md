@@ -2,7 +2,7 @@
 
 This R project is used to build the `iotc.data.reference.datasets.CE` R package and contains all necessary code and resources to create the catch and effort datasets from the data currently available in the IOTC databases.
 
-It uses the `iotc.base.common.data` library to access the current data storage (`IOTDB`) but does not explicitly depends on it. This means that the final package can be used in other R projects / scripts that need any of the exported datasets, without introducing any type of dependency from the IOTC databases.
+It uses the `iotc.base.common.data` library to access the current data storage (`IOTDB`) but does not explicitly depend on it. This means that the final package can be used in other R projects / scripts that need any of the exported datasets, without introducing any type of dependency from the IOTC databases.
 
 In fact, *live* access to the IOTC databases is only required when **building** the project.
 
