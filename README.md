@@ -1,4 +1,4 @@
-# Georeferenced catch and effort datasets
+# Geo-referenced catch and effort datasets
 
 This R project is used to build the `iotc.data.reference.datasets.CE` R package and contains all necessary code and resources to create the catch and effort datasets from the data currently available in the IOTC databases.
 
