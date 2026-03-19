@@ -1,0 +1,74 @@
+---
+title: "Metadata for Retained Catch Data: Scientific Best Estimates"
+subtitle: "Best scientific estimates of retained catch data for the 16 species under the IOTC mandate"
+author: "Author: [IOTC Secretariat](mailto:IOTC-Secretariat@fao.org)" 
+output:
+  html_document2:
+    number_sections: FALSE
+    toc: yes
+    toc_float:
+      collapsed: FALSE
+      smooth_scroll: FALSE
+---
+  
+```{r general_options, echo = FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  tidy = TRUE,
+  tidy.opts = list(width.cutoff = 60),
+  size = 'small',
+  
+  tab.cap.pre = "Table ",
+  tab.cap.sep = ". ",
+  tab.cap.style ='Table Caption',
+  
+  fig.cap.style = "Caption label",
+  fig.cap.pre = "Fig. ", 
+  fig.cap.sep = ". ",
+  
+  fig.width   = 8,
+  fig.height  = 4.5
+)
+
+knit_hooks$set(
+  inline = function(x) {
+    prettyNum(x, big.mark = "")
+  }
+)
+```
+
+## Abstract
+
+This dataset corresponds to the best scientific estimates of annual catches in live-weight equivalent for the 16 IOTC species, aggregated by year, IOTC statistical area and fishing fleet, and fully disaggregated by species and fishing gear. Data are reported by calendar year and extend back to the 1950s, when industrial longlining started in the Indian Ocean.
+
+The data originate from the IOTC Contracting Parties and Cooperating Non-Contracting Parties ([CPCs]((https://iotc.org/about-iotc/structure-commission) )) as per the IOTC data requirements (Resolution [15/02](https://www.iotc.org/cmm/resolution-1502-mandatory-statistical-reporting-requirements-iotc-contracting-parties-and)). They are submitted annually, mostly using IOTC Form [1RC](https://data.iotc.org/reference/latest/forms/#Form_1RC), and curated by the Secretariat for dissemination prior to IOTC Working Parties and other scientific data users.
+
+The breakdown by species or gear is performed using additional sources of information available to the Secretariat, such as statistical publications, fishery bulletins, and other historical or proxy data. In some cases, the Secretariat may re-estimate the species or gear composition for strata affected by known data collection or reporting issues. These re-estimations are made in agreement with the IOTC Scientific Committee and may be revised in future updates.
+
+## Global Attributes
+
+- **Title**: Best scientific estimates of retained catches for the 16 IOTC species by year, IOTC statistical area, fishing fleet, gear and species (`r paste0(min(RC_SCI$YEAR), "-", max(RC_SCI$YEAR))`)
+- **Summary**: Dataset of IOTC best scientific estimates of annual retained catches in live-weight equivalent for the 16 IOTC species, aggregated by year, IOTC statistical area and fishing fleet, and disaggregated by species and fishing gear, covering the period `r paste0(min(RC_SCI$YEAR), "-", max(RC_SCI$YEAR))`
+- **Context of development**: Management and scientific assessment of tuna and tuna-like species under the mandate of the Indian Ocean Tuna Commission (IOTC)
+- **Data origin**: Retained catch data collected on land and at sea by national institutions and the fishing industry
+- **Lineage**: Catch data submitted by IOTC Contracting Parties and Cooperating Non-Contracting Parties (CPCs), and subsequently reviewed, complemented and consolidated by the IOTC Secretariat
+- **Keywords**: IOTC species; retained catch; tuna and tuna-like species; Indian Ocean; fisheries statistics
+- **Type**: Tabular dataset
+- **Format**: CSV
+- **Size**: 
+    + `r prettyNum(RC_SCI_FILES_SIZE["csvFileSizeKB"], big.mark = ",")` KB for original dataset
+    + `r prettyNum(RC_SCI_FILES_SIZE["zipFileSizeKB"], big.mark = ",")` KB for compressed dataset
+- **Structures**: `r prettyNum(nrow(RC_SCI), big.mark = ",")` rows x `r prettyNum(ncol(RC_SCI), big.mark = ",")` columns
+- **Geographic description**: Indian Ocean fishing areas, as defined by the [IOTC statistical areas](https://data.iotc.org/reference/latest/domain/admin/#IOTC_Main_Areas)
+- **Update frequency**: Irregular; updated following data submissions, revisions and consolidations
+- **Metadata production date**: `r format(Sys.time(), '%d %B %Y')`
+- **Source**: [Indian Ocean Tuna Commission (IOTC)](https://www.iotc.org/)
+- **Data curator**: IOTC Secretariat
+- **Contact**: [IOTC-Statistics@fao.org](mailto:IOTC-Statistics@fao.org)
+- **Associated rights**: Public-domain data; source acknowledgement required
+
+## Data Fields
+
+```{r RCFieldsDefinitions, fig.cap = ""}
+datatable(FIELDS_RC_DATA_TABLE, escape = FALSE, rownames = FALSE, options = list(dom = 't', pageLength = nrow(FIELDS_RC_DATA_TABLE)))
+```

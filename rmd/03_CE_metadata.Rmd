@@ -1,0 +1,92 @@
+---
+title: "Metadata for Geo-referenced catch and effort Data"
+subtitle: "Species-specific retained catches and efforts by fleet, fishery, and spatio-temporal stratum"
+author: "Author: [IOTC Secretariat](mailto:IOTC-Secretariat@fao.org)"
+output:
+  html_document2:
+    number_sections: FALSE
+    toc: yes
+    toc_float:
+      collapsed: FALSE
+      smooth_scroll: FALSE
+---
+  
+```{r general_options, echo = FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  tidy = TRUE,
+  tidy.opts = list(width.cutoff = 60),
+  size = 'small',
+  
+  tab.cap.pre = "Table ",
+  tab.cap.sep = ". ",
+  tab.cap.style ='Table Caption',
+  
+  fig.cap.style = "Caption label",
+  fig.cap.pre = "Fig. ", 
+  fig.cap.sep = ". ",
+  
+  fig.width   = 8,
+  fig.height  = 4.5
+)
+
+knit_hooks$set(
+  inline = function(x) {
+    prettyNum(x, big.mark = "")
+  }
+)
+```
+
+## Abstract
+
+These datasets corresponds to the latest version of the geo-referenced catch and effort (CE) for the all species for which data are submitted to the Secretariat. 
+
+ - CA: Geo-referenced Catches (in tonnes and/or numbers of individuals) are recorded by fishing fleet, year, gear, type of school, time interval (usually monthly), spatial stratum (typically CWP grid squares of 1°×1° for surface fisheries and 5°×5° for longline fisheries), and species. 
+ - EF: Geo-referenced Effort data are recorded by fishing fleet, year, gear, type of school, time interval, and spatial stratum
+ - CE: Geo-referenced Catch and Effort combined all recorded data for CA ( geo-referenced catch) and EF ( geo-referenced effort) by stratum of fishing fleet, year, gear, fishing mode, spatial-temporal (month), by effort and species.
+
+Not all fisheries have reported catches, and therefore geo-referenced data are not available for all retained catch strata. In some cases, the geo-referenced catches do not represent the total catches of all species for a given fleet and gear in a specific year, but rather constitute only a sample of the total.
+
+Except for longline fisheries, the IOTC did not prescribe specific units for effort reporting for many years, which may have resulted in variation in the nature of effort data submitted over time. Gear-specific effort units are now recommended in the IOTC reporting guidelines (see section Geo-referenced catches and efforts), in accordance with the provisions of Resolution 15/01 and the recommendation of the 25th Session of the Scientific Committee. The latter recommends that the number of sets or operations be reported as a mandatory effort variable for longline and surface fisheries, enabling the Secretariat to accurately and independently estimate the coverage of the Regional Observer Scheme (ROS).
+
+The data originate from the IOTC Contracting Parties and Cooperating Non-Contracting Parties ([CPCs]((https://iotc.org/about-iotc/structure-commission) )) as per the IOTC data requirements (Resolution [15/02](https://www.iotc.org/cmm/resolution-1502-mandatory-statistical-reporting-requirements-iotc-contracting-parties-and)). They are submitted annually, mostly using IOTC Form [3CE](https://data.iotc.org/reference/latest/forms/#Form_3CE), and curated by the Secretariat for dissemination prior to IOTC Working Parties and other scientific data users.
+
+## Global Attributes
+
+- **Title**: Species-specific retained catches and efforts by fleet, fishery, and spatio-temporal stratum, `r paste0(min(CA$YEAR), "-", max(CA$YEAR))`
+- **Summary**: Curated dataset providing detailed information on the catches and efforts of tuna and tuna-like fisheries operating in the Indian Ocean
+- **Context of development**: Management and scientific assessment of tuna and tuna-like species under the mandate of the Indian Ocean Tuna Commission (IOTC)
+- **Data origin**: Effort and retained catch data collected on land or at sea by national institutions and the fishing industry, with some data having been previously extrapolated to represent the broader fishery
+- **Lineage**: Catch data submitted by IOTC Contracting Parties and Cooperating Non-Contracting Parties (CPCs), and subsequently reviewed, complemented and consolidated by the IOTC Secretariat
+- **Keywords**:catch, effort, tuna fisheries; Indian Ocean; fisheries statistics
+- **Type**: Tabular dataset
+- **Format**: CSV
+- **Size**: 
+    + `r prettyNum(CA_FILES_SIZE["csvFileSizeKB"], big.mark = ",")` KB for original dataset
+    + `r prettyNum(CA_FILES_SIZE["zipFileSizeKB"], big.mark = ",")` KB for compressed dataset
+- **Structures**: 
+    + `r prettyNum(nrow(CA), big.mark = ",")` rows x `r prettyNum(ncol(CA), big.mark = ",")` columns for catch dataset
+    + `r prettyNum(nrow(EF), big.mark = ",")` rows x `r prettyNum(ncol(EF), big.mark = ",")` columns for effort dataset
+     + `r prettyNum(nrow(CE), big.mark = ",")` rows x `r prettyNum(ncol(CE), big.mark = ",")` columns for catch and effort dataset
+- **Geographic description**: Fishing areas within the Indian Ocean, as defined by the [IOTC statistical areas](https://data.iotc.org/reference/latest/domain/admin/#Geospatial_Data)
+- **Update frequency**: Irregular; updated following data submissions, revisions and consolidations
+- **Metadata production date**: `r format(Sys.time(), '%d %B %Y')`
+- **Source**: [Indian Ocean Tuna Commission (IOTC)](https://www.iotc.org/)
+- **Data curator**: IOTC Secretariat
+- **Contact**: [IOTC-Statistics@fao.org](mailto:IOTC-Statistics@fao.org)
+- **Associated rights**: Public-domain data; source acknowledgement required
+
+## Data Fields
+
+### _Geo-referenced catch_
+
+```{r CAFieldsDefinitions, fig.cap = ""}
+datatable(FIELDS_CA_DATA_TABLE, escape = FALSE, rownames = FALSE, options = list(dom = 't', pageLength = nrow(FIELDS_CA_DATA_TABLE)))
+```
+
+
+### _Geo-referenced effort_
+
+```{r EFFieldsDefinitions, fig.cap = ""}
+datatable(FIELDS_EF_DATA_TABLE, escape = FALSE, rownames = FALSE, options = list(dom = 't', pageLength = nrow(FIELDS_EF_DATA_TABLE)))
+```
