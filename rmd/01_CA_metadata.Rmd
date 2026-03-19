@@ -1,5 +1,5 @@
 ---
-title: "Metadata for Geo-referenced catch and effort Data"
+title: "Metadata for Geo-Referenced Catch and Efort Data"
 subtitle: "Species-specific retained catches and efforts by fleet, fishery, and spatio-temporal stratum"
 author: "Author: [IOTC Secretariat](mailto:IOTC-Secretariat@fao.org)"
 output:
@@ -39,7 +39,7 @@ knit_hooks$set(
 
 ## Abstract
 
-This dataset corresponds to the latest version of the geo-referenced catch and effort (CE) for the all species for which data are submitted to the Secretaria. Catches (in tonnes and/or numbers of individuals) are recorded by fishing fleet, year, gear, type of school, time interval (usually monthly), spatial stratum (typically CWP grid squares of 1°×1° for surface fisheries and 5°×5° for longline fisheries), and species. Effort data are recorded by fishing fleet, year, gear, type of school, time interval, and spatial stratum, but are not stratified by species.
+This dataset corresponds to the latest version of the geo-referenced catch and effort (CE) for the all species for which data are submitted to the Secretariat. Catches (in tonnes and/or numbers of individuals) are recorded by fishing fleet, year, gear, type of school, time interval (usually monthly), spatial stratum (typically CWP grid squares of 1°×1° for surface fisheries and 5°×5° for longline fisheries), and species. Effort data are recorded by fishing fleet, year, gear, type of school, time interval, and spatial stratum, but are not stratified by species.
 
 Not all fisheries have reported catches, and therefore geo-referenced data are not available for all retained catch strata. In some cases, the geo-referenced catches do not represent the total catches of all species for a given fleet and gear in a specific year, but rather constitute only a sample of the total.
 
