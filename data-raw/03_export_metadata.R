@@ -18,7 +18,7 @@ EF_FIELDS[!is.na(`CODE LIST NAME`), `CODE LIST` := paste0("<a href=\"", `CODE LI
 
 EF_FIELDS <- EF_FIELDS[, -c("CODE LIST NAME", "CODE LIST URL")]
 
-## Georeferenced Catch and Efforts ####
+## Geo-referenced Catch and Efforts ####
 #CE_FIELDS <- fread("./data/CE_FIELDS.csv")[FIELD %in% names(CA), .(FIELD, DEFINITION, `CODE LIST NAME`, `CODE LIST URL`)]
 
 #CE_FIELDS[!is.na(`CODE LIST NAME`), `CODE LIST` := paste0("<a href=\"", `CODE LIST URL`, "\">", `CODE LIST NAME`, "</a>")]
