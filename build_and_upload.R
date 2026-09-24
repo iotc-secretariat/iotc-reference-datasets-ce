@@ -1,5 +1,6 @@
-library(httr)
-library(iotc.core.utils.misc)
+# Libraries
+require(httr)
+require(iotc.core.utils.misc)
 
 # Load the data on the GitHub repository ####
 source("./data-raw/01_load_datasets.R")
